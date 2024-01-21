@@ -8,7 +8,6 @@ def login(api_url, user_login, api_key):
         "ApiKey": api_key
     }
     headers = {"Content-Type": "application/json"}
-
     response = requests.post(api_url, data=json.dumps(data), headers=headers)
 
     if response.status_code == 200:
@@ -18,10 +17,8 @@ def login(api_url, user_login, api_key):
         print("Login Failed:", response.status_code, response.text)
         return None
 
-def main():
+def main(user_login, api_key):
     api_url = "http://dochazka.efg.cz/aktionnext/api/login"
-    user_login = "usernameXXX"
-    api_key = "passwordYYY"
 
     token_info = login(api_url, user_login, api_key)
     if token_info:
@@ -29,5 +26,4 @@ def main():
         print("Expires in:", token_info.get("ExpireInSec"), "seconds")
 
 if __name__ == "__main__":
-    print(''.join(['\n' for _ in range(50)]))
-    main()
+    main(user_login="dochazka-ext", api_key="hDn/LFXIPESM036W+s7VKg==") ## priklad hesla z dokumentace {"Message":"UserLogin or ApiKey are unknown or user is blocked","Code":1003}
