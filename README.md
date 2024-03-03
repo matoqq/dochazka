@@ -3,7 +3,9 @@
 # Setup virtual environment
 create and activate virtual environment
 ```bash
-bash setup_env.sh
+conda env create -f environment.yml # creating environment
+# conda env update -f environment.yml --prune # updating env if you already created it
+conda activate dochazkaEnv # activating env
 ```
 
 # creating Database

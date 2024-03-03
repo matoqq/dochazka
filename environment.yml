@@ -1,0 +1,8 @@
+name: dochazkaEnv
+channels:
+  - defaults
+dependencies:
+  - python=3.9
+  - pymssql
+  - pandas=2.1.4
+  - sqlalchemy=2.0.25

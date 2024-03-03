@@ -63,9 +63,9 @@ CREATE TABLE professionTb (
 );
 CREATE TABLE attendanceTb (
     entry_time DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
-    exit_time DATETIMEOFFSET NOT NULL DEFAULT SYSDATETIMEOFFSET(),
+    sensor_name NVARCHAR(255),
     user_id INT NOT NULL,
-    note NVARCHAR(255) NOT NULL
+    note NVARCHAR(255)
 );
 
 /* Relations */
@@ -657,3 +657,6 @@ INSERT INTO usersTb (user_id, name, email, password, password_salt, position_typ
 INSERT INTO usersTb (user_id, name, email, password, password_salt, position_type, titles, profession_id, department_id) SELECT 94972, 'Shannon Hansen', '', 'password001', 'salt001', 1, 'Mgr.', profession_id, '5610103420' FROM professionTb WHERE profession_en='Academic worker - assistant'
 INSERT INTO usersTb (user_id, name, email, password, password_salt, position_type, titles, profession_id, department_id) SELECT 14008, 'Alejandro Castro', '', 'password001', 'salt001', 1, 'Bc.', profession_id, '5610103790' FROM professionTb WHERE profession_en='Financial accountant II.'
 INSERT INTO usersTb (user_id, name, email, password, password_salt, position_type, titles, profession_id, department_id) SELECT 3599, 'David Hicks', '', 'password001', 'salt001', 1, '', profession_id, '561010370860' FROM professionTb WHERE profession_en='maintenance worker'
+
+/* Create attendance */
+INSERT INTO attendanceTb (entry_time, sensor_name, user_id) VALUES ('2024-03-01T08:00:00.0000000+00:00', 'dvereTest1', 63830);
