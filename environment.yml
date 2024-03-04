@@ -1,8 +1,10 @@
 name: dochazkaEnv
 channels:
+  - conda-forge
   - defaults
 dependencies:
   - python=3.9
-  - pymssql
+  - requests=2.31.0
   - pandas=2.1.4
   - sqlalchemy=2.0.25
+  - pymssql=2.2.5
